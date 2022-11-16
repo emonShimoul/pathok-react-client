@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     return (
         <div>
-            <h2>Navigation</h2>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
         </div>
     );
 };
