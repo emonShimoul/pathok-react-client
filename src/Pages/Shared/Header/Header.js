@@ -1,15 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
+
+    const handleSearch = (e) => {
+        // alert("searched...");
+        e.preventDefault();
+    }
+
     return (
-        <div class="bg-gray-100 flex flex-col justify-center">
-            <div class="relative p-2 w-full sm:max-w-2xl sm:mx-auto">
-                <div class="overflow-hidden z-0 rounded-xl relative p-3">
-                    <form class="relative flex z-50 bg-white rounded-xl border border-2">
-                        <input type="text" placeholder="enter your search here" class="rounded-xl flex-1 px-6 py-3 text-gray-700 focus:outline-none" />
-                        <button class="bg-indigo-500 text-white rounded-xl font-semibold px-8 py-3 hover:bg-indigo-400 focus:bg-indigo-600 focus:outline-none">Search</button>
+        <div className="container mx-auto flex flex-row justify-center mb-5">
+            <div className='basis-1/4 pt-5'>
+                <h1 className='text-5xl font-bold text-green-600'>Pathok.</h1>
+            </div>
+            <div className="pt-2 w-full sm:max-w-2xl sm:mx-auto basis-1/2">
+                <div className="overflow-hidden z-0 rounded-xl pt-3">
+                    <form onSubmit={handleSearch} className="flex z-50 bg-white rounded-xl border border-2">
+                        <input type="text" placeholder="enter your search here" className="rounded-xl flex-1 px-6 py-3 text-gray-700 focus:outline-none" />
+                        <button className="bg-green-600 text-white rounded-xl font-semibold px-8 py-3 hover:bg-green-500 focus:bg-green-800 focus:outline-none">Search</button>
                     </form>
                 </div>
+            </div>
+            <div className='basis-1/4 pt-6'>
+                <Link to="/login" className='text-xl font-bold hover:text-green-800'>Login</Link>
             </div>
         </div>
     );
