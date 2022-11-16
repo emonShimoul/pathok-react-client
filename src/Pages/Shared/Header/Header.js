@@ -16,7 +16,7 @@ const Header = () => {
             <div className="pt-2 w-full sm:max-w-2xl sm:mx-auto basis-1/2">
                 <div className="overflow-hidden z-0 rounded-xl pt-3">
                     <form onSubmit={handleSearch} className="flex z-50 bg-white rounded-xl border border-2">
-                        <input type="text" placeholder="enter your search here" className="rounded-xl flex-1 px-6 py-3 text-gray-700 focus:outline-none" />
+                        <input type="text" placeholder="Enter Your Search Here" className="rounded-xl flex-1 px-6 py-3 text-gray-700 focus:outline-none" />
                         <button className="bg-green-600 text-white rounded-xl font-semibold px-8 py-3 hover:bg-green-500 focus:bg-green-800 focus:outline-none">Search</button>
                     </form>
                 </div>
