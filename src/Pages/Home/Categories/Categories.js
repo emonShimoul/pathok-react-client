@@ -2,8 +2,8 @@ import React from 'react';
 
 const Categories = () => {
     return (
-        <div>
-            <h2>Category</h2>
+        <div className='container mx-auto'>
+            <h2>Categories</h2>
         </div>
     );
 };
