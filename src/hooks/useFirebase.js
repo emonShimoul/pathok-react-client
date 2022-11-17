@@ -17,6 +17,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
+                console.log(user);
                 setAuthError('');
                 const destination = state?.redirectTo?.pathname || '/';
                 navigate(destination);
@@ -39,11 +40,21 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, [auth])
 
+    const logOut = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        })
+            .finally(() => setIsLoading(false));
+    }
+
     return {
         user,
         signInWithGoogle,
         isLoading,
-        authError
+        authError,
+        logOut
     }
 }
 

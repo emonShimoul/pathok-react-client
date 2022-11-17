@@ -71,8 +71,8 @@ const Login = () => {
                             Sign up
                         </Link>
                         {isLoading && <p>Loading...</p>}
-                        {user?.email && alert("User Login Successfully!!")}
-                        {authError && alert(authError)}
+                        {/* {user?.email && alert("User Login Successfully!!")}
+                        {authError && alert(authError)} */}
                     </div>
 
                     <div className="flex items-center w-full my-4">

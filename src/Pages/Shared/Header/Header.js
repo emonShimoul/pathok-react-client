@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
+
+    const { user, logOut } = useAuth();
 
     const handleSearch = (e) => {
         // alert("searched...");
@@ -22,8 +25,13 @@ const Header = () => {
                 </div>
             </div>
             <div className='basis-1/4 pt-6 text-xl font-bold'>
-                <Link to="/login" className='hover:text-green-800'>Login </Link> /
-                <Link to="/register" className='hover:text-green-800'> Register</Link>
+                {!user?.email ?
+                    <div>
+                        <Link to="/login" className='hover:text-green-800'>Login </Link> /
+                        <Link to="/register" className='hover:text-green-800'> Register</Link>
+                    </div>
+                    :
+                    <Link onClick={logOut}>LogOut</Link>}
             </div>
         </div>
     );
