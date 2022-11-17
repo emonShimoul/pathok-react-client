@@ -6,11 +6,9 @@ const Register = () => {
         <div>
             <div className="flex flex-col items-center min-h-screen pt-6 mt-20 sm:pt-0">
                 <div>
-                    <a href="/">
-                        <h3 className="text-3xl font-semibold text-center text-green-700 underline">
-                            Register
-                        </h3>
-                    </a>
+                    <h1 className="text-3xl font-semibold text-center text-green-700 underline">
+                        Register
+                    </h1>
                 </div>
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
                     <form>
