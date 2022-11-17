@@ -1,7 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
+    const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
+    const navigate = useNavigate();
+    const { state } = useLocation();
+
+    const handleLoginSubmit = e => {
+        // loginUser(loginData.email, loginData.password, navigate, state);
+        e.preventDefault();
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(navigate, state);
+    }
+
     return (
         <div>
             <div className="relative flex flex-col mt-20 min-h-screen overflow-hidden">
@@ -12,7 +26,7 @@ const Login = () => {
                     <form className="mt-6">
                         <div className="mb-2">
                             <label
-                                for="email"
+                                htmlFor="email"
                                 className="block text-sm font-semibold text-gray-800"
                             >
                                 Email
@@ -24,7 +38,7 @@ const Login = () => {
                         </div>
                         <div className="mb-2">
                             <label
-                                for="password"
+                                htmlFor="password"
                                 className="block text-sm font-semibold text-gray-800"
                             >
                                 Password
@@ -41,13 +55,13 @@ const Login = () => {
                             Forget Password?
                         </a> */}
                         <div className="mt-6">
-                            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">
+                            <button onClick={handleLoginSubmit} className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">
                                 Login
                             </button>
                         </div>
                     </form>
 
-                    <p className="mt-8 text-xs font-light text-center text-gray-700">
+                    <div className="mt-8 text-xs font-light text-center text-gray-700">
                         {" "}
                         Don't have an account?{" "}
                         <Link
@@ -56,7 +70,10 @@ const Login = () => {
                         >
                             Sign up
                         </Link>
-                    </p>
+                        {isLoading && <p>Loading...</p>}
+                        {user?.email && alert("User Login Successfully!!")}
+                        {authError && alert(authError)}
+                    </div>
 
                     <div className="flex items-center w-full my-4">
                         <hr className="w-full" />
@@ -65,6 +82,7 @@ const Login = () => {
                     </div>
                     <div className="my-6 space-y-2">
                         <button
+                            onClick={handleGoogleSignIn}
                             aria-label="Login with Google"
                             type="button"
                             className="flex items-center justify-center w-full p-2 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-green-400"
