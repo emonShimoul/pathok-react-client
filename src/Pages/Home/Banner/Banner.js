@@ -1,38 +1,16 @@
 import React from 'react';
 
 const Banner = () => {
+    const bgImg = 'https://htmldemo.net/pustok/pustok/image/bg-images/home-3-slider-2.jpg';
     return (
-        <div className="mx-auto py-9 md:py-12 px-4 md:px-6">
-            <div className="flex items-strech justify-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
-                <div className="flex flex-col md:flex-row items-strech justify-between bg-gray-50 py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12">
-                    <div className="flex flex-col justify-center md:w-1/2">
-                        <h1 className="text-3xl lg:text-4xl font-semibold text-gray-800">Best Deal</h1>
-                        <p className="text-base lg:text-xl text-gray-800 mt-2">
-                            Save upto <span className="font-bold">50%</span>
-                        </p>
-                    </div>
-                    <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end">
-                        <img src="https://htmldemo.net/pustok/pustok/image/bg-images/home-3-slider-2.jpg" alt="" />
-                    </div>
-                </div>
-                <div className="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-gray-50 py-6 px-6 md:py-0 md:px-4 lg:px-6 flex flex-col justify-center relative">
-                    <div className="flex flex-col justify-center">
-                        <h1 className="text-3xl lg:text-4xl font-semibold text-gray-800">Game Console</h1>
-                        <p className="text-base lg:text-xl text-gray-800">
-                            Save Upto <span className="font-bold">30%</span>
-                        </p>
-                    </div>
-                    <div className="flex justify-end md:absolute md:bottom-4 md:right-4 lg:bottom-0 lg:right-0">
-                        <img src="https://i.ibb.co/rGfP7mp/Rectangle-59-1.png" alt="" className="md:w-20 md:h-20 lg:w-full lg:h-full" />
-                    </div>
-                </div>
+        <div className='flex flex-row py-24 2xl:py-36 bg-no-repeat bg-center' style={{ background: `url(${bgImg})` }}>
+            <div className='basis-1/4'></div>
+            <div className='basis-1/4'>
+                <h1 className='2xl:text-6xl text-5xl text-white mt-10 font-serif italic'>I love This Idea!!</h1>
+                <h2 className='2xl:text-4xl text-3xl text-white mt-4 font-serif italic'>Cover up Front of Book and Leave Summary</h2>
+                <button className="bg-green-600 text-white rounded-xl font-semibold mb-6 mt-10 px-8 py-3 hover:bg-green-500">Buy Now</button>
             </div>
-
-            {/* <div className="bg-accent-dark bg-cover"
-                style={{ backgroundImage: "url(https://i.ibb.co/rGfP7mp/Rectangle-59-1.png)", backgroundColor: "red" }}>
-                <h2>Banner</h2>
-            </div> */}
-
+            <div className='basis-1/2'></div>
         </div>
     );
 };

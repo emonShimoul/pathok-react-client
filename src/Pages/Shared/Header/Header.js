@@ -9,7 +9,7 @@ const Header = () => {
     }
 
     return (
-        <div className="container mx-auto flex flex-row justify-center mb-5">
+        <div className="container mx-auto flex md:flex-row flex-col justify-center mb-5">
             <div className='basis-1/4 pt-5'>
                 <h1 className='text-5xl font-bold text-green-600'>Pathok.</h1>
             </div>
