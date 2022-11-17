@@ -24,14 +24,18 @@ const Header = () => {
                     </form>
                 </div>
             </div>
-            <div className='basis-1/4 pt-6 text-xl font-bold'>
+            <div className='basis-1/4 pt-6'>
                 {!user?.email ?
-                    <div>
-                        <Link to="/login" className='hover:text-green-800'>Login </Link> /
-                        <Link to="/register" className='hover:text-green-800'> Register</Link>
+                    <div className='text-xl font-bold'>
+                        <Link to="/login" className='hover:text-green-800 focus:text-green-800'>Login </Link> /
+                        <Link to="/register" className='hover:text-green-800 focus:text-green-800'> Register</Link>
                     </div>
                     :
-                    <Link onClick={logOut}>LogOut</Link>}
+                    <div className='text-sm'>
+                        <p>Hello, <span className='font-bold'>{user.displayName}</span></p>
+                        <Link onClick={logOut} className='font-bold text-green-800 underline'>LogOut</Link>
+                    </div>
+                }
             </div>
         </div>
     );
