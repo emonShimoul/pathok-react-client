@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Register = () => {
     return (
         <div>
-            <div className="flex flex-col items-center min-h-screen pt-6 mt-28 sm:pt-0">
+            <div className="flex flex-col items-center min-h-screen pt-6 mt-20 sm:pt-0">
                 <div>
                     <a href="/">
                         <h3 className="text-3xl font-semibold text-center text-green-700 underline">

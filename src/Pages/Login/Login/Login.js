@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Login = () => {
     return (
         <div>
-            <div className="relative flex flex-col mt-28 min-h-screen overflow-hidden">
+            <div className="relative flex flex-col mt-20 min-h-screen overflow-hidden">
                 <div className="w-full p-6 mx-auto bg-white rounded-md shadow-md lg:max-w-xl">
                     <h1 className="text-3xl font-semibold text-center text-green-700 underline">
                         Sign in
