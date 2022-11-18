@@ -2,6 +2,45 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Products = () => {
+
+    const books = [
+        {
+            name: "Book 1",
+            price: "100",
+            image: "",
+            description: "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.",
+            rating: "1"
+        },
+        {
+            name: "Book 2",
+            price: "200",
+            image: "",
+            description: "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.",
+            rating: "2"
+        },
+        {
+            name: "Book 3",
+            price: "300",
+            image: "",
+            description: "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.",
+            rating: "3"
+        },
+        {
+            name: "Book 4",
+            price: "400",
+            image: "",
+            description: "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.",
+            rating: "4"
+        },
+        {
+            name: "Book 5",
+            price: "500",
+            image: "",
+            description: "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.",
+            rating: "5"
+        }
+    ]
+
     return (
         <div className='bg-gray-100'>
             <div className='container mx-auto'>
