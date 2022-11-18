@@ -80,9 +80,10 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, [auth])
 
-    const logOut = () => {
+    const logOut = (navigate) => {
         signOut(auth).then(() => {
             // Sign-out successful.
+            navigate("/");
         }).catch((error) => {
             // An error happened.
         })

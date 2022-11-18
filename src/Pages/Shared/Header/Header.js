@@ -1,14 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
-
     const { user, logOut } = useAuth();
+    const navigate = useNavigate();
 
     const handleSearch = (e) => {
         // alert("searched...");
         e.preventDefault();
+    }
+
+    const handleLogOut = () => {
+        logOut(navigate);
     }
 
     return (
@@ -33,7 +37,7 @@ const Header = () => {
                     :
                     <div className='text-sm'>
                         <p>Hello, <span className='font-bold'>{user.displayName}</span>
-                            <Link onClick={logOut} className='font-bold text-red-600 underline ml-4'>LogOut</Link>
+                            <Link onClick={handleLogOut} className='font-bold text-red-600 underline ml-4'>LogOut</Link>
                         </p>
                         <Link to="/addbooks" className='font-bold text-green-800 underline'>Add Books</Link>
 
