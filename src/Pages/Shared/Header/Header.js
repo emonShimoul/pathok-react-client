@@ -32,8 +32,11 @@ const Header = () => {
                     </div>
                     :
                     <div className='text-sm'>
-                        <p>Hello, <span className='font-bold'>{user.displayName}</span></p>
-                        <Link onClick={logOut} className='font-bold text-green-800 underline'>LogOut</Link>
+                        <p>Hello, <span className='font-bold'>{user.displayName}</span>
+                            <Link onClick={logOut} className='font-bold text-red-600 underline ml-4'>LogOut</Link>
+                        </p>
+                        <Link onClick="" className='font-bold text-green-800 underline'>Add Books</Link>
+
                     </div>
                 }
             </div>
