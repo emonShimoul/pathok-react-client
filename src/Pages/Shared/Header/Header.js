@@ -35,7 +35,7 @@ const Header = () => {
                         <p>Hello, <span className='font-bold'>{user.displayName}</span>
                             <Link onClick={logOut} className='font-bold text-red-600 underline ml-4'>LogOut</Link>
                         </p>
-                        <Link onClick="" className='font-bold text-green-800 underline'>Add Books</Link>
+                        <Link to="/addbooks" className='font-bold text-green-800 underline'>Add Books</Link>
 
                     </div>
                 }
