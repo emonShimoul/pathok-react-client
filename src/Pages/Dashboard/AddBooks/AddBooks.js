@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const AddBooks = () => {
     const [bookInfo, setBookInfo] = useState({});
+
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -21,7 +22,11 @@ const AddBooks = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
+                if (data.insertedId) {
+                    alert("Book Submitted Successfully!!");
+                    document.getElementById("bookForm").reset();
+                }
             })
         console.log(bookInfo);
         e.preventDefault();
@@ -34,7 +39,7 @@ const AddBooks = () => {
                     <h1 className="text-3xl font-semibold text-center text-green-700 underline">
                         Add Book Form
                     </h1>
-                    <form onSubmit={handleBookAdd} className="mt-6">
+                    <form onSubmit={handleBookAdd} className="mt-6" id='bookForm'>
                         <div className="mb-2">
                             <label
                                 htmlFor="bookname"
@@ -66,13 +71,6 @@ const AddBooks = () => {
                         </div>
 
                         <div className="mb-2">
-                            {/* <label
-                                htmlFor="category"
-                                className="block text-sm font-semibold text-gray-800 mb-3"
-                            >
-                                Book Category
-                            </label> */}
-                            {/* should be dropdown */}
                             <select onBlur={handleOnChange} className='text-sm text-center font-semibold text-white bg-gray-600 py-2 w-full my-3 rounded' id="category" name="category" required>
                                 <option>Select Category</option>
                                 <option value="novel">Novel</option>
