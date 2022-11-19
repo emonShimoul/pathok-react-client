@@ -11,7 +11,17 @@ const AddBooks = () => {
     }
 
     const handleBookAdd = e => {
-        // loginUser(loginData.email, loginData.password, navigate, state);
+        fetch('http://localhost:5000/books', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
         console.log(bookInfo);
         e.preventDefault();
     }
