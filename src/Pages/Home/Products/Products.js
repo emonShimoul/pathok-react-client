@@ -9,14 +9,19 @@ const Products = () => {
             .then(res => res.json())
             .then(data => setBooksData(data))
     }, []);
-    console.log(booksData);
+    // console.log(booksData);
 
     return (
         <div className='bg-gray-100'>
             <div className='container mx-auto'>
                 <p className='text-4xl font-bold mt-8 pt-8 mb-4'>BOOKS</p>
                 <div className='grid lg:grid-cols-4 gap-8 m-12 pb-12 sm:justify-center'>
-                    <Product></Product>
+                    {
+                        booksData.map(bookData => <Product
+                            key={bookData._id}
+                            bookData={bookData}
+                        ></Product>)
+                    }
                 </div>
             </div>
         </div>
