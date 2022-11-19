@@ -54,6 +54,21 @@ const AddBooks = () => {
                                 htmlFor="bookname"
                                 className="block text-sm font-semibold text-gray-800"
                             >
+                                Writer Name
+                            </label>
+                            <input
+                                onBlur={handleOnChange}
+                                name="writername"
+                                type="text"
+                                className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" required
+                            />
+                        </div>
+
+                        <div className="mb-2">
+                            <label
+                                htmlFor="category"
+                                className="block text-sm font-semibold text-gray-800"
+                            >
                                 Book Category
                             </label>
                             {/* should be dropdown */}
