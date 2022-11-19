@@ -5,6 +5,7 @@ const AddBooks = () => {
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
+        // console.log(field, value);
         const newBookInfo = { ...bookInfo };
         newBookInfo[field] = value;
         setBookInfo(newBookInfo);
@@ -65,19 +66,27 @@ const AddBooks = () => {
                         </div>
 
                         <div className="mb-2">
-                            <label
+                            {/* <label
                                 htmlFor="category"
-                                className="block text-sm font-semibold text-gray-800"
+                                className="block text-sm font-semibold text-gray-800 mb-3"
                             >
                                 Book Category
-                            </label>
+                            </label> */}
                             {/* should be dropdown */}
-                            <input
+                            <select onBlur={handleOnChange} className='text-sm text-center font-semibold text-white bg-gray-600 py-2 w-full my-3 rounded' id="category" name="category" required>
+                                <option>Select Category</option>
+                                <option value="novel">Novel</option>
+                                <option value="childrenBooks">Children Books</option>
+                                <option value="islamicBooks">Islamic Books</option>
+                                <option value="poems">Poems</option>
+                            </select>
+
+                            {/* <input
                                 onBlur={handleOnChange}
                                 name="category"
                                 type="text"
                                 className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" required
-                            />
+                            /> */}
                         </div>
 
                         <div className="mb-2">
