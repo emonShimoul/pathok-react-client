@@ -22,13 +22,12 @@ const AddBooks = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 if (data.insertedId) {
                     alert("Book Submitted Successfully!!");
                     document.getElementById("bookForm").reset();
                 }
             })
-        console.log(bookInfo);
         e.preventDefault();
     }
 

@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Products = () => {
+    const [booksData, setBooksData] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/books`)
+            .then(res => res.json())
+            .then(data => setBooksData(data))
+    }, []);
+    console.log(booksData);
 
     return (
         <div className='bg-gray-100'>
