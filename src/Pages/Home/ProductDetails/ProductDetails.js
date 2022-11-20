@@ -17,8 +17,8 @@ const ProductDetails = () => {
 
     return (
         <div className='container mx-auto md:flex mt-20 w-4/6'>
-            <ImagePreviewer></ImagePreviewer>
-            <ItemInfo></ItemInfo>
+            <ImagePreviewer bookDetails={bookDetails}></ImagePreviewer>
+            <ItemInfo bookDetails={bookDetails}></ItemInfo>
         </div>
     );
 };
