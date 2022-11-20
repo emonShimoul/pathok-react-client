@@ -19,7 +19,7 @@ const ImagePreviewerModal = ({
     onHide,
 }) => {
     return (
-        <div className={visible ? 'modal fixed top-0 left-0 z-50 w-full h-full bg-blue-very-dark bg-opacity-90 flex flex-col items-center justify-center' : 'hidden'}>
+        <div className={visible ? 'fixed top-0 left-0 z-50 w-full h-full bg-blue-very-dark bg-opacity-90 flex flex-col items-center justify-center' : 'hidden'}>
             <button title='close modal' onClick={onHide} className='mb-4 ml-[400px]'>
                 <img src={iconClose} alt='close modal' />
             </button>
@@ -38,12 +38,12 @@ const ImagePreviewerModal = ({
                     <img src={iconNext} alt='next' />
                 </button>
             </div>
-            <div className='selector space-x-7'>
+            <div className='space-x-7'>
                 {productImagesThumb.map(({ alt, src }, index) => (
                     <button
                         key={index}
                         title={alt}
-                        className={current === index ? 'current' : ''}
+                        className={current === index ? 'bg-orange-pale bg-opacity-60 border-2' : 'hover:bg-orange-pale hover:bg-opacity-60 hover:border-2 border-orange rounded-md w-16 h-16 bg-center bg-cover bg-blend-overlay'}
                         style={{ backgroundImage: `url(${src})` }}
                         onClick={() => setCurrent(index)}></button>
                 ))}
