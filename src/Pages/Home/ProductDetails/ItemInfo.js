@@ -20,7 +20,7 @@ const ItemInfo = ({ bookDetails }) => {
     };
 
     return (
-        <section className='item-info p-7 lg:px-16 mt-16'>
+        <section className='item-info p-7 lg:px-16 mt-0 md:mt-16 w-full'>
             <h3 className='text-3xl font-bold mb-5'>{bookname?.toUpperCase()}</h3>
             <h2 className='text-orange text-sm font-bold uppercase tracking-widest mb-3'>{writername}</h2>
             <p className='tracking-wider text-blue-dark-grayish text-justify leading-6 mb-7 w-full'>
@@ -43,7 +43,7 @@ const ItemInfo = ({ bookDetails }) => {
                         <img src={iconPlus} alt='plus' />
                     </button>
                 </div>
-                <button className='flex justify-center items-center space-x-3 w-40 lg:w-96 py-4 text-blue-light-grayish font-bold bg-orange rounded-lg transition-all duration-200 md:flex-grow' title='add to cart' disabled={amount < 1} onClick={handleAddToCart}>
+                <button className='flex justify-center items-center space-x-3 w-40 lg:w-72 py-4 text-blue-light-grayish font-bold bg-orange rounded-lg transition-all duration-200 md:flex-grow' title='add to cart' disabled={amount < 1} onClick={handleAddToCart}>
                     <img src={iconCart} alt='cart' className='w-5 mb-1' />
                     <span>Add to cart</span>
                 </button>

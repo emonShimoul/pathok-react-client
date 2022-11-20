@@ -1,23 +1,19 @@
 import * as React from 'react';
 
 import iconClose from '../../../images/icon-close-white.svg';
-import iconPrev from '../../../images/icon-previous.svg';
-import iconNext from '../../../images/icon-next.svg';
-import { productImagesLarge, productImagesThumb } from '../../../libs/productImages';
+// import iconPrev from '../../../images/icon-previous.svg';
+// import iconNext from '../../../images/icon-next.svg';
+// import { productImagesLarge, productImagesThumb } from '../../../libs/productImages';
 
-// interface PropsInterface {
-// 	current: number;
-// 	setCurrent: (index: number) => void;
-// 	visible: boolean;
-// 	onHide: () => void;
-// }
 
 const ImagePreviewerModal = ({
     current,
-    setCurrent,
+    // setCurrent,
     visible,
     onHide,
+    bookDetails
 }) => {
+    const { bookname, image } = bookDetails;
     return (
         <div className={visible ? 'fixed top-0 left-0 z-50 w-full h-full bg-blue-very-dark bg-opacity-90 flex flex-col items-center justify-center' : 'hidden'}>
             <button title='close modal' onClick={onHide} className='mb-4 ml-[400px]'>
@@ -26,19 +22,20 @@ const ImagePreviewerModal = ({
             <div className='previewer relative mb-7'>
                 <div className='overflow-hidden'>
                     <div className='w-[420px] relative flex transition-all duration-300 ease-linear' style={{ left: 420 * -current }}>
-                        {productImagesLarge.map(({ alt, src }, index) => (
+                        {/* {productImagesLarge.map(({ alt, src }, index) => (
                             <img key={index} src={src} alt={alt} className='rounded-lg w-full' />
-                        ))}
+                        ))} */}
+                        <img src={image} alt={bookname?.toUpperCase()} />
                     </div>
                 </div>
-                <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50 top-1/2 w-12 h-12' title='previous' disabled={current === 0} onClick={() => setCurrent(--current)}>
+                {/* <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50 top-1/2 w-12 h-12' title='previous' disabled={current === 0} onClick={() => setCurrent(--current)}>
                     <img src={iconPrev} alt='previous' />
                 </button>
                 <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50 top-1/2 w-12 h-12 left:unset right-3' title='next' disabled={current === 3} onClick={() => setCurrent(++current)}>
                     <img src={iconNext} alt='next' />
-                </button>
+                </button> */}
             </div>
-            <div className='space-x-7'>
+            {/* <div className='space-x-7'>
                 {productImagesThumb.map(({ alt, src }, index) => (
                     <button
                         key={index}
@@ -47,7 +44,7 @@ const ImagePreviewerModal = ({
                         style={{ backgroundImage: `url(${src})` }}
                         onClick={() => setCurrent(index)}></button>
                 ))}
-            </div>
+            </div> */}
         </div>
     );
 };

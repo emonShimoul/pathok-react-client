@@ -2,11 +2,12 @@ import * as React from 'react';
 
 import Modal from './ImagePreviewerModal';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
-import iconPrev from '../../../images/icon-previous.svg';
-import iconNext from '../../../images/icon-next.svg';
-import { productImagesLarge, productImagesThumb } from '../../../libs/productImages';
+// import iconPrev from '../../../images/icon-previous.svg';
+// import iconNext from '../../../images/icon-next.svg';
+// import { productImagesLarge, productImagesThumb } from '../../../libs/productImages';
 
-const ImagePreviewer = () => {
+const ImagePreviewer = ({ bookDetails }) => {
+    const { bookname, image } = bookDetails;
     const { width } = useWindowDimensions();
     const [current, setCurrent] = React.useState(0);
     const [modalOn, setModal] = React.useState(false);
@@ -17,11 +18,13 @@ const ImagePreviewer = () => {
                 <h2 className='hidden'>Image Preview</h2>
                 <img
                     className='rounded-lg mb-7 max-h-[768px]'
-                    src={productImagesLarge[current].src}
-                    alt={productImagesLarge[current].alt}
+                    // src={productImagesLarge[current].src}
+                    src={image}
+                    alt={bookname?.toUpperCase()}
+                    // alt={productImagesLarge[current].alt}
                     onClick={() => setModal(true)}
                 />
-                <div className='flex items-center justify-between'>
+                {/* <div className='flex items-center justify-between'>
                     {productImagesThumb.map(({ alt, src }, index) => (
                         <button
                             key={index}
@@ -30,30 +33,34 @@ const ImagePreviewer = () => {
                             style={{ backgroundImage: `url(${src})` }}
                             onClick={() => setCurrent(index)}></button>
                     ))}
-                </div>
+                </div> */}
                 <Modal
                     current={current}
                     visible={modalOn}
                     setCurrent={setCurrent}
                     onHide={() => setModal(false)}
+                    // image={image}
+                    // bookname={bookname}
+                    bookDetails={bookDetails}
                 />
             </section>
         );
-
+    // for mobile
     return (
         <section className='relative overflow-hidden min-h-[300px]'>
             <h2 className='hidden'>Image Preview</h2>
             <div className='relative flex transition-all duration-300 ease-linear' style={{ left: width * -current }}>
-                {productImagesLarge.map(({ alt, src }, index) => (
+                {/* {productImagesLarge.map(({ alt, src }, index) => (
                     <img className='w-full' key={index} src={src} alt={alt} />
-                ))}
+                ))} */}
+                <img src={image} alt="" />
             </div>
-            <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50' title='previous' disabled={current === 0} onClick={() => setCurrent(prev => --prev)}>
+            {/* <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50' title='previous' disabled={current === 0} onClick={() => setCurrent(prev => --prev)}>
                 <img src={iconPrev} alt='previous' />
             </button>
             <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50 left:unset right-3' title='next' disabled={current === 3} onClick={() => setCurrent(prev => ++prev)}>
                 <img src={iconNext} alt='next' />
-            </button>
+            </button> */}
         </section>
     );
 };
