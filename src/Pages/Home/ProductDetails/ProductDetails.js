@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ImagePreviewer from './ImagePreviewer';
+import ItemInfo from './ItemInfo';
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -15,7 +17,9 @@ const ProductDetails = () => {
 
     return (
         <div>
-            <h2>Book Name: {bookDetails.bookname}</h2>
+            {/* <h2>Book Name: {bookDetails.bookname}</h2> */}
+            <ItemInfo></ItemInfo>
+            <ImagePreviewer></ImagePreviewer>
         </div>
     );
 };
