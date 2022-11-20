@@ -16,10 +16,9 @@ const ProductDetails = () => {
     // console.log(bookDetails);
 
     return (
-        <div>
-            {/* <h2>Book Name: {bookDetails.bookname}</h2> */}
-            <ItemInfo></ItemInfo>
+        <div className='container mx-auto md:flex mt-20 w-4/6'>
             <ImagePreviewer></ImagePreviewer>
+            <ItemInfo></ItemInfo>
         </div>
     );
 };

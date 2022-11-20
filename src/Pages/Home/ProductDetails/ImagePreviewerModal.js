@@ -19,26 +19,26 @@ const ImagePreviewerModal = ({
     onHide,
 }) => {
     return (
-        <div className={visible ? 'modal' : 'hidden'}>
+        <div className={visible ? 'modal fixed top-0 left-0 z-50 w-full h-full bg-blue-very-dark bg-opacity-90 flex flex-col items-center justify-center' : 'hidden'}>
             <button title='close modal' onClick={onHide} className='mb-4 ml-[400px]'>
                 <img src={iconClose} alt='close modal' />
             </button>
-            <div className='previewer'>
-                <div>
-                    <div className='w-[420px]' style={{ left: 420 * -current }}>
+            <div className='previewer relative mb-7'>
+                <div className='overflow-hidden'>
+                    <div className='w-[420px] relative flex transition-all duration-300 ease-linear' style={{ left: 420 * -current }}>
                         {productImagesLarge.map(({ alt, src }, index) => (
-                            <img key={index} src={src} alt={alt} className='rounded-lg' />
+                            <img key={index} src={src} alt={alt} className='rounded-lg w-full' />
                         ))}
                     </div>
                 </div>
-                <button title='previous' disabled={current === 0} onClick={() => setCurrent(--current)}>
+                <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50 top-1/2 w-12 h-12' title='previous' disabled={current === 0} onClick={() => setCurrent(--current)}>
                     <img src={iconPrev} alt='previous' />
                 </button>
-                <button title='next' disabled={current === 3} onClick={() => setCurrent(++current)}>
+                <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50 top-1/2 w-12 h-12 left:unset right-3' title='next' disabled={current === 3} onClick={() => setCurrent(++current)}>
                     <img src={iconNext} alt='next' />
                 </button>
             </div>
-            <div className='selector'>
+            <div className='selector space-x-7'>
                 {productImagesThumb.map(({ alt, src }, index) => (
                     <button
                         key={index}

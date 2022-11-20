@@ -19,7 +19,7 @@ const ItemInfo = () => {
     };
 
     return (
-        <section className='item-info p-7 lg:px-16'>
+        <section className='item-info p-7 lg:px-16 mt-16'>
             <h2 className='text-orange text-sm font-bold uppercase tracking-widest mb-3'>Sneaker Company</h2>
             <h3 className='text-3xl font-bold mb-5'>Fall Limited Edition Sneakers</h3>
             <p className='tracking-wider text-blue-dark-grayish text-justify leading-6 mb-7'>
@@ -33,7 +33,7 @@ const ItemInfo = () => {
                 </div>
                 <span className='text-lg font-bold text-blue-dark-grayish text-opacity-50 line-through'>$250.00</span>
             </div>
-            <div className='second flex flex-col md: flex-row md:items-center md:space-x-2'>
+            <div className='flex flex-col md:flex-row md:items-center md:space-x-2'>
                 <div className='mb-4 flex justify-center items-center h-14 bg-blue-light-grayish rounded-lg md: w-1/2 md:mb-0'>
                     <button className='px-5 min-w-fit' onClick={handleMinus}>
                         <img src={iconMinus} alt='minus' />
@@ -43,7 +43,7 @@ const ItemInfo = () => {
                         <img src={iconPlus} alt='plus' />
                     </button>
                 </div>
-                <button className='flex justify-center items-center space-x-3 w-full py-4 text-blue-light-grayish font-bold bg-orange rounded-lg transition-all duration-200 disabled: bg-opacity-50 disabled:pointer-events-none md:flex-grow' title='add to cart' disabled={amount < 1} onClick={handleAddToCart}>
+                <button className='flex justify-center items-center space-x-3 w-1/4 py-4 text-blue-light-grayish font-bold bg-orange rounded-lg transition-all duration-200 md:flex-grow' title='add to cart' disabled={amount < 1} onClick={handleAddToCart}>
                     <img src={iconCart} alt='cart' className='w-5 mb-1' />
                     <span>Add to cart</span>
                 </button>
