@@ -15,11 +15,11 @@ const ImagePreviewerModal = ({
 }) => {
     const { bookname, image } = bookDetails;
     return (
-        <div className={visible ? 'fixed top-0 left-0 z-50 w-full h-full bg-blue-very-dark bg-opacity-90 flex flex-col items-center justify-center' : 'hidden'}>
+        <div className={visible ? 'fixed top-0 left-0 z-50 w-full h-full bg-gray-900 bg-opacity-90 flex flex-col items-center justify-center' : 'hidden'}>
             <button title='close modal' onClick={onHide} className='mb-4 ml-[400px]'>
                 <img src={iconClose} alt='close modal' />
             </button>
-            <div className='previewer relative mb-7'>
+            <div className='relative mb-7'>
                 <div className='overflow-hidden'>
                     <div className='w-[420px] relative flex transition-all duration-300 ease-linear' style={{ left: 420 * -current }}>
                         {/* {productImagesLarge.map(({ alt, src }, index) => (
