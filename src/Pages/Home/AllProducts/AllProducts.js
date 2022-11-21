@@ -1,11 +1,13 @@
 import React from 'react';
 
-const AllBooks = () => {
+const AllProducts = (booksData) => {
+    console.log(booksData);
     return (
         <div>
             <h2>All Books</h2>
+
         </div>
     );
 };
 
-export default AllBooks;
+export default AllProducts;

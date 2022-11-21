@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AllProducts from '../AllProducts/AllProducts';
 import Product from '../Product/Product';
 
 const Products = () => {
@@ -9,7 +10,7 @@ const Products = () => {
             .then(res => res.json())
             .then(data => setBooksData(data))
     }, []);
-    // console.log(booksData);
+    console.log(booksData);
 
     return (
         <div className='bg-gray-100'>
@@ -21,6 +22,10 @@ const Products = () => {
                             key={bookData._id}
                             bookData={bookData}
                         ></Product>)
+                    }
+
+                    {
+                        <AllProducts booksData={booksData}></AllProducts>
                     }
                 </div>
             </div>

@@ -29,7 +29,7 @@ const Header = () => {
                 </div>
             </div>
             <div className='basis-1/4 pt-6 space-x-4'>
-                <Link to="/allbooks" className='font-bold text-green-800 underline'>All Books</Link>
+                <Link to="/allproducts" className='font-bold text-green-800 underline'>All Books</Link>
                 {!user?.email ?
                     <div className='text-md font-bold underline inline'>
                         <Link to="/login" className='hover:text-green-800 focus:text-green-800'>Login </Link> /
