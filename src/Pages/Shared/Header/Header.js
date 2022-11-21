@@ -28,9 +28,9 @@ const Header = () => {
                     </form>
                 </div>
             </div>
-            <div className='basis-1/4 pt-6'>
+            <div className='basis-1/4 pt-8'>
                 {!user?.email ?
-                    <div className='text-xl font-bold'>
+                    <div className='text-md font-bold underline'>
                         <Link to="/login" className='hover:text-green-800 focus:text-green-800'>Login </Link> /
                         <Link to="/register" className='hover:text-green-800 focus:text-green-800'> Register</Link>
                     </div>
