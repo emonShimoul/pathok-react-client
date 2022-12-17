@@ -18,7 +18,7 @@ const Products = () => {
                 <p className='text-4xl font-bold mt-8 pt-8 mb-4'>BOOKS</p>
                 <div className='grid lg:grid-cols-4 gap-8 m-12 pb-12 sm:justify-center'>
                     {
-                        booksData.map(bookData => <Product
+                        booksData.slice(0, 8).map(bookData => <Product
                             key={bookData._id}
                             bookData={bookData}
                         ></Product>)
