@@ -3,9 +3,27 @@ import { Link } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 
 const ManageBooks = () => {
-    const { booksData } = useFetch();
+    const { booksData, setBooksData } = useFetch();
     // console.log(booksData);
     // const { _id, bookname, category, writername, description, image, rating, price } = booksData;
+
+    const handleDelete = id => {
+        const proceed = window.confirm("Are you sure, you want to delete??");
+        if (proceed) {
+            fetch(`http://localhost:5000/books/${id}`, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        // console.log(data);
+                        alert("Deleted Successfully!!");
+                        const remainingBooks = booksData.filter(books => books._id !== id);
+                        setBooksData(remainingBooks);
+                    }
+                });
+        }
+    }
 
     return (
         <div className='container mx-auto'>
@@ -36,7 +54,7 @@ const ManageBooks = () => {
                             booksData.map(bookData =>
                                 <tr key={bookData._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <td className="p-4 w-32">
-                                        <img src={bookData.image} alt="Apple Watch" />
+                                        <img src={bookData.image} alt="Books" />
                                     </td>
                                     <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
                                         {bookData.bookname}
@@ -60,11 +78,11 @@ const ManageBooks = () => {
                                         {bookData.writername}
                                     </td>
                                     <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
-                                        $599
+                                        {bookData.price}
                                     </td>
                                     <td className="py-4 px-6">
                                         <Link className="font-medium text-green-600 dark:text-green-500 hover:underline">Edit</Link> |
-                                        <Link className="font-medium text-red-600 dark:text-red-500 hover:underline"> Remove</Link>
+                                        <Link onClick={() => handleDelete(bookData._id)} className="font-medium text-red-600 dark:text-red-500 hover:underline"> Remove</Link>
                                     </td>
                                 </tr>
                             )

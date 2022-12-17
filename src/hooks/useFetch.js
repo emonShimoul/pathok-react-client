@@ -10,7 +10,8 @@ const useFetch = () => {
     }, []);
 
     return {
-        booksData
+        booksData,
+        setBooksData
     }
 }
 
