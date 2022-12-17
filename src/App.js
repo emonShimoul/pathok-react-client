@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import AddBooks from './Pages/Dashboard/AddBooks/AddBooks';
+import ManageBooks from './Pages/Dashboard/ManageBooks/ManageBooks';
 import AllProducts from './Pages/Home/AllProducts/AllProducts';
 import Home from './Pages/Home/Home/Home';
 import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
@@ -23,6 +24,7 @@ function App() {
             <Route element={<AllProducts />} path="/allproducts"></Route>
             <Route element={<ProductDetails />} path="/productDetails/:productId"></Route>
             <Route element={<ProtectedRoute><AddBooks /></ProtectedRoute>} path="/addbooks"></Route>
+            <Route element={<ProtectedRoute><ManageBooks /></ProtectedRoute>} path="/managebooks"></Route>
             <Route element={<Home />} path="/"></Route>
           </Routes>
           <Footer></Footer>

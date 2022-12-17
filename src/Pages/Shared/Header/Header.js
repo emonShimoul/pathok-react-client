@@ -36,8 +36,9 @@ const Header = () => {
                         <Link to="/register" className='hover:text-green-800 focus:text-green-800'> Register</Link>
                     </div>
                     :
-                    <div className='inline'>
+                    <div className='inline space-x-4'>
                         <Link to="/addbooks" className='font-bold text-green-800 underline'>Add a Book</Link>
+                        <Link to="/managebooks" className='font-bold text-green-800 underline'>Manage Books</Link>
                         <p className='text-sm'>Hello, <span className='font-bold'>{user.displayName}</span>
                             <Link onClick={handleLogOut} className='font-bold text-red-600 underline ml-4'>LogOut</Link>
                         </p>
