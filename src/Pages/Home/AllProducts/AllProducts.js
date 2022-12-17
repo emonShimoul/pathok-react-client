@@ -1,11 +1,12 @@
 import React from 'react';
+import useFetch from '../../../hooks/useFetch';
 
-const AllProducts = (booksData) => {
+const AllProducts = () => {
+    const { booksData } = useFetch();
     console.log(booksData);
     return (
         <div>
             <h2>All Books</h2>
-
         </div>
     );
 };
