@@ -4,8 +4,6 @@ import useFetch from '../../../hooks/useFetch';
 
 const ManageBooks = () => {
     const { booksData, setBooksData } = useFetch();
-    // console.log(booksData);
-    // const { _id, bookname, category, writername, description, image, rating, price } = booksData;
 
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure, you want to delete??");
@@ -16,7 +14,6 @@ const ManageBooks = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        // console.log(data);
                         alert("Deleted Successfully!!");
                         const remainingBooks = booksData.filter(books => books._id !== id);
                         setBooksData(remainingBooks);
