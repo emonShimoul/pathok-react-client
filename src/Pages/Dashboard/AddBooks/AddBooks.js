@@ -51,6 +51,7 @@ const AddBooks = () => {
             .then(data => {
                 if (data.insertedId) {
                     alert('Added Book Successfully!!');
+                    document.getElementById("bookForm").reset();
                 }
             })
             .catch(error => {
