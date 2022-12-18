@@ -60,7 +60,9 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                // save user to database
+                saveUser(user.email, user.displayName, 'PUT');
+                // console.log(user);
                 setAuthError('');
                 const destination = state?.redirectTo?.pathname || '/';
                 navigate(destination);
