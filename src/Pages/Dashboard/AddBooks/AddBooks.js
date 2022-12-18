@@ -14,21 +14,49 @@ const AddBooks = () => {
     }
 
     const handleBookAdd = e => {
+        if (!image) {
+            return;
+        }
+        console.log(bookInfo);
+        const formData = new FormData();
+        formData.append('bookname', bookInfo.bookname);
+        formData.append('writername', bookInfo.writername);
+        formData.append('category', bookInfo.category);
+        formData.append('description', bookInfo.description);
+        formData.append('price', bookInfo.price);
+        formData.append('rating', bookInfo.rating);
+        formData.append('image', image);
+
+        // fetch('http://localhost:5000/books', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(bookInfo)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.insertedId) {
+        //             alert("Book Submitted Successfully!!");
+        //             document.getElementById("bookForm").reset();
+        //         }
+        //     })
+
         fetch('http://localhost:5000/books', {
             method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(bookInfo)
+            body: formData
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.insertedId) {
-                    alert("Book Submitted Successfully!!");
-                    document.getElementById("bookForm").reset();
+                    alert('Added Book Successfully!!');
                 }
             })
+            .catch(error => {
+                console.error('Error:', error);
+            })
+
         e.preventDefault();
     }
 
@@ -153,7 +181,7 @@ const AddBooks = () => {
                                 type="file"
                                 accept="image/*"
                                 className='my-4'
-                                onChange={e => console.log(e.target.files)}
+                                onChange={e => setImage(e.target.files[0])}
                             />
                             {/* <label htmlFor="file-upload" className="z-20 mx-auto mt-4 py-4 rounded flex flex-col-reverse items-center justify-center w-1/2 h-full cursor-pointer border border-dotted border-gray-400">
                                 <p className="z-10 text-xs font-bold text-center">Drag & Drop your image here</p>

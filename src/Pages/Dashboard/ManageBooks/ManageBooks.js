@@ -51,7 +51,7 @@ const ManageBooks = () => {
                             booksData.map(bookData =>
                                 <tr key={bookData._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <td className="p-4 w-32">
-                                        <img src={bookData.image} alt="Books" />
+                                        <img src={`data:image/jpeg;base64,${bookData.image}`} alt="Books" />
                                     </td>
                                     <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
                                         {bookData.bookname}

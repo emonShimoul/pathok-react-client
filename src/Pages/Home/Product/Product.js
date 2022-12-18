@@ -8,7 +8,7 @@ const Product = ({ bookData }) => {
     return (
         <div className="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
             <Link to={`/productDetails/${_id}`}>
-                <img className="p-8 rounded-t-lg" src={image} alt="something" />
+                <img className="pt-8 pb-4 mx-auto" src={`data:image/jpeg;base64,${image}`} alt="something" style={{ width: '200px', height: '250px' }} />
             </Link>
             <div className="px-5 pb-5">
                 <div>
