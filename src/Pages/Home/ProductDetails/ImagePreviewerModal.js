@@ -25,7 +25,7 @@ const ImagePreviewerModal = ({
                         {/* {productImagesLarge.map(({ alt, src }, index) => (
                             <img key={index} src={src} alt={alt} className='rounded-lg w-full' />
                         ))} */}
-                        <img src={image} alt={bookname?.toUpperCase()} />
+                        <img src={`data:image/jpeg;base64,${image}`} alt={bookname?.toUpperCase()} />
                     </div>
                 </div>
                 {/* <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50 top-1/2 w-12 h-12' title='previous' disabled={current === 0} onClick={() => setCurrent(--current)}>

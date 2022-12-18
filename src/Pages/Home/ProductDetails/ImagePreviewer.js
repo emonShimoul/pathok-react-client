@@ -14,15 +14,16 @@ const ImagePreviewer = ({ bookDetails }) => {
 
     if (width >= 960)
         return (
-            <section className='p-5'>
+            <section className='p-5 w-1/2'>
                 <h2 className='hidden'>Image Preview</h2>
                 <img
                     className='rounded-lg mb-7 max-h-[768px]'
                     // src={productImagesLarge[current].src}
-                    src={image}
+                    src={`data:image/jpeg;base64,${image}`}
                     alt={bookname?.toUpperCase()}
                     // alt={productImagesLarge[current].alt}
                     onClick={() => setModal(true)}
+                    style={{ width: '400px', height: '350px' }}
                 />
                 {/* <div className='flex items-center justify-between'>
                     {productImagesThumb.map(({ alt, src }, index) => (
@@ -53,7 +54,10 @@ const ImagePreviewer = ({ bookDetails }) => {
                 {/* {productImagesLarge.map(({ alt, src }, index) => (
                     <img className='w-full' key={index} src={src} alt={alt} />
                 ))} */}
-                <img src={image} alt="" />
+                <img
+                    src={`data:image/jpeg;base64,${image}`}
+                    alt=""
+                    style={{ width: '400px', height: '350px' }} />
             </div>
             {/* <button className='transform: translateY(-50%) absolute left-3 top-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center disabled: bg-opacity-50' title='previous' disabled={current === 0} onClick={() => setCurrent(prev => --prev)}>
                 <img src={iconPrev} alt='previous' />
