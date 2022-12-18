@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const AddBooks = () => {
     const [bookInfo, setBookInfo] = useState({});
+    const [image, setImage] = useState(null);
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -38,7 +39,7 @@ const AddBooks = () => {
                     <h1 className="text-3xl font-semibold text-center text-green-700 underline">
                         Add Book Form
                     </h1>
-                    <form onSubmit={handleBookAdd} className="mt-6" id='bookForm'>
+                    <form onSubmit={handleBookAdd} className="mt-6 text-start" id='bookForm'>
                         <div className="mb-2">
                             <label
                                 htmlFor="bookname"
@@ -144,18 +145,26 @@ const AddBooks = () => {
                                 type="text"
                                 className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" required
                             /> */}
-
-                            <input type="file" id="file-upload" className="hidden" />
-                            <label htmlFor="file-upload" className="z-20 mx-auto mt-4 py-4 rounded flex flex-col-reverse items-center justify-center w-1/2 h-full cursor-pointer border border-dotted border-gray-600">
+                            <label className='block text-sm font-semibold text-gray-800 mt-4'>
+                                <p>Select Your Image Here</p>
+                            </label>
+                            <input
+                                id='file-upload'
+                                type="file"
+                                accept="image/*"
+                                className='my-4'
+                                onChange={e => console.log(e.target.files)}
+                            />
+                            {/* <label htmlFor="file-upload" className="z-20 mx-auto mt-4 py-4 rounded flex flex-col-reverse items-center justify-center w-1/2 h-full cursor-pointer border border-dotted border-gray-400">
                                 <p className="z-10 text-xs font-bold text-center">Drag & Drop your image here</p>
                                 <svg className="z-10 w-8 h-8 text-red-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
                                 </svg>
-                            </label>
+                            </label> */}
                         </div>
 
                         <div className="mt-6">
-                            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">
+                            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600" type='submit'>
                                 Add
                             </button>
                         </div>
