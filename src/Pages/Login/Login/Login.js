@@ -4,7 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, authError, signInWithGoogle, isLoading } = useAuth();
+    const { loginUser, authError, signInWithGoogle, isLoading } = useAuth();
     const navigate = useNavigate();
     const { state } = useLocation();
 

@@ -7,7 +7,6 @@ const Header = () => {
     const navigate = useNavigate();
 
     const handleSearch = (e) => {
-        // alert("searched...");
         e.preventDefault();
     }
 
