@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = ({ bookData }) => {
-    const { _id, bookname, category, writername, description, image, rating, price } = bookData;
+    const { _id, bookname, writername, image, rating, price } = bookData;
 
     return (
         <div className="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
