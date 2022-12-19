@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = ({ bookData }) => {
-    // console.log(bookData);
     const { _id, bookname, category, writername, description, image, rating, price } = bookData;
 
     return (
