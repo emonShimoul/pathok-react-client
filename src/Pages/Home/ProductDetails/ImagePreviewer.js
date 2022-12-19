@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import Modal from './ImagePreviewerModal';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
 // import iconPrev from '../../../images/icon-previous.svg';
@@ -46,6 +45,7 @@ const ImagePreviewer = ({ bookDetails }) => {
                 />
             </section>
         );
+
     // for mobile
     return (
         <section className='relative overflow-hidden min-h-[300px]'>
