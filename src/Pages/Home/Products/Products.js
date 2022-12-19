@@ -4,7 +4,6 @@ import Product from '../Product/Product';
 
 const Products = () => {
     const { booksData } = useFetch();
-    // console.log(booksData);
 
     return (
         <div className='bg-gray-100'>
